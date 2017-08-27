@@ -1,0 +1,5 @@
+This is a derivative work based on https://github.com/technion/libscrypt/, which itself is a derivative
+work based on the original implementation by Colin Percival (http://www.tarsnap.com/scrypt.html).
+
+All original source code is licensed under the BSD License (see tinyscrypt.h header).
+My changes can be considered public domain.

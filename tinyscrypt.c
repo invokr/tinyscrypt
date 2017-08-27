@@ -307,7 +307,7 @@ int tinyscrypt(const uint8_t* pwd, size_t pwdlen, const uint8_t* salt, size_t sa
     assert((N & (N - 1)) == 0 && (N >= 2));
 
     if ((V0 = mmap(NULL, 128 * r * N, PROT_READ|PROT_WRITE, MAP_ANON|MAP_PRIVATE, -1, 0)) == MAP_FAILED)
-        return 4;
+        return 1;
 
     V = (uint32_t *)(V0);
 
@@ -321,7 +321,7 @@ int tinyscrypt(const uint8_t* pwd, size_t pwdlen, const uint8_t* salt, size_t sa
     PBKDF2_SHA256(pwd, pwdlen, B, p * 128 * r, 1, buf, buflen);
 
     if (munmap(V0, 128 * r * N))
-        return 5;
+        return 1;
 
     return 0;
 }
